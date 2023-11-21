@@ -1,3 +1,3 @@
-import BookmarkletBtn from './components/HelloWorld.vue';
+import {BookmarkletScript, BookmarkletName} from './button/button.ts'
 
-export {BookmarkletBtn};
+export {BookmarkletScript, BookmarkletName};

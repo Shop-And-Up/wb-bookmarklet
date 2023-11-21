@@ -1,0 +1,97 @@
+// Arrow
+#arrow,
+#arrow::before {
+  transition: background 250ms ease-in-out;
+  position: absolute;
+  width: calc(10px - var(--popper-theme-border-width, 0px));
+  height: calc(10px - var(--popper-theme-border-width, 0px));
+  box-sizing: border-box;
+  background: var(--popper-theme-background-color);
+}
+
+#arrow {
+  visibility: hidden;
+}
+
+#arrow::before {
+  visibility: visible;
+  content: '';
+  transform: rotate(45deg);
+}
+
+/* Top arrow */
+.popper[data-popper-placement^='top'] > #arrow {
+  bottom: -5px;
+}
+
+.popper[data-popper-placement^='top'] > #arrow::before {
+  border-right: var(--popper-theme-border-width) var(--popper-theme-border-style)
+    var(--popper-theme-border-color);
+  border-bottom: var(--popper-theme-border-width) var(--popper-theme-border-style)
+    var(--popper-theme-border-color);
+}
+
+/* Bottom arrow */
+.popper[data-popper-placement^='bottom'] > #arrow {
+  top: -5px;
+}
+
+.popper[data-popper-placement^='bottom'] > #arrow::before {
+  border-left: var(--popper-theme-border-width) var(--popper-theme-border-style)
+    var(--popper-theme-border-color);
+  border-top: var(--popper-theme-border-width) var(--popper-theme-border-style)
+    var(--popper-theme-border-color);
+}
+
+/* Left arrow */
+.popper[data-popper-placement^='left'] > #arrow {
+  right: -5px;
+}
+
+.popper[data-popper-placement^='left'] > #arrow::before {
+  border-right: var(--popper-theme-border-width) var(--popper-theme-border-style)
+    var(--popper-theme-border-color);
+  border-top: var(--popper-theme-border-width) var(--popper-theme-border-style)
+    var(--popper-theme-border-color);
+}
+
+/* Right arrow */
+.popper[data-popper-placement^='right'] > #arrow {
+  left: -5px;
+}
+
+// POPUP
+.inline-block {
+  display: inline-block;
+}
+.popper {
+  transition: background 250ms ease-in-out;
+  background: var(--popper-theme-background-color);
+  padding: var(--popper-theme-padding);
+  color: var(--popper-theme-text-color);
+  border-radius: var(--popper-theme-border-radius);
+  border-width: var(--popper-theme-border-width);
+  border-style: var(--popper-theme-border-style);
+  border-color: var(--popper-theme-border-color);
+  box-shadow: var(--popper-theme-box-shadow);
+  z-index: v-bind(zIndex);
+}
+
+.popper:hover,
+.popper:hover > #arrow::before {
+  background: var(--popper-theme-background-color-hover);
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}

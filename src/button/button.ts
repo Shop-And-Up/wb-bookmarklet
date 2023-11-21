@@ -1,0 +1,2 @@
+export const BookmarkletName = 'WB V2.9';
+export const BookmarkletScript = `javascript: r();c();function c(){const t="__BOOKMARKLET_URL__/lib.js?v=2.9",e=document.getElementsByTagName("script");for(var n=e.length;n--;)if(e[n].src==t)return;const o=document.createElement("script");o.src=t,document.body.appendChild(o)}function r(){const t=document.getElementsByTagName("wba-bookmarklet");for(var e=t.length;e--;)t[e].remove();let n=document.createElement("wba-bookmarklet");n.setAttribute("uuid","__WBA_SHOP_ID__"),document.body.appendChild(n)} `;
