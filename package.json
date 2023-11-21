@@ -1,8 +1,29 @@
 {
   "name": "wb-bookmarklet",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shop-And-Up/wb-bookmarklet.git"
+  },
+  "files": [
+    "dist",
+    "src/components/"
+  ],
+  "main": "./dist/wba-bookmarklet.umd.cjs",
+  "module": "./dist/wba-bookmarklet.js",
+  "exports": {
+    ".": {
+      "import": "./dist/wba-bookmarklet.js",
+      "require": "./dist/wba-bookmarklet.umd.cjs"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
+  },
+  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
@@ -11,10 +32,15 @@
   "dependencies": {
     "vue": "^3.3.8"
   },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.0",
+    "path": "^0.12.7",
     "typescript": "^5.2.2",
     "vite": "^5.0.0",
+    "vite-plugin-dts": "^3.6.3",
     "vue-tsc": "^1.8.22"
   }
 }
